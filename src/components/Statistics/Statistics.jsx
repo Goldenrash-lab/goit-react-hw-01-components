@@ -1,16 +1,27 @@
+import {
+  Section,
+  Heading2,
+  StatList,
+  StatItem,
+  Label,
+  Percentage,
+} from './Statistics.styled';
+
+import { getRandomColor } from 'components/helpers/randomColor';
+
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      {title && <h2 className="title">{title}</h2>}
+    <Section>
+      {title && <Heading2>{title}</Heading2>}
 
-      <ul className="stat-list">
+      <StatList>
         {stats.map(({ id, label, percentage }) => (
-          <li key={id} className="item">
-            <span className="label">{label}</span>
-            <span className="percentage">{percentage}</span>
-          </li>
+          <StatItem key={id} $color={getRandomColor()}>
+            <Label>{label}</Label>
+            <Percentage>{percentage}</Percentage>
+          </StatItem>
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </Section>
   );
 };
