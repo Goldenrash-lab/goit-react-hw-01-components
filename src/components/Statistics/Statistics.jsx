@@ -7,7 +7,7 @@ import {
   Percentage,
 } from './Statistics.styled';
 
-import { getRandomColor } from 'components/helpers/randomColor';
+import { getRandomColor } from 'helpers/randomColor';
 
 export const Statistics = ({ title, stats }) => {
   return (

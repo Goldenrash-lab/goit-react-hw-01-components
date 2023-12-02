@@ -6,6 +6,8 @@ import userData from '../json/user.json';
 import data from '../json/data.json';
 import friends from '../json/friends.json';
 import transactions from '../json/transactions.json';
+
+const { username, tag, location, avatar, stats } = userData;
 export const App = () => {
   return (
     <div
@@ -19,7 +21,13 @@ export const App = () => {
         gap: '50px',
       }}
     >
-      <Profile {...userData} />
+      <Profile
+        username={username}
+        tag={tag}
+        location={location}
+        avatar={avatar}
+        stats={stats}
+      />
       <Statistics title="Upload stats" stats={data} />
       <Statistics stats={data} />
       <FriendList friends={friends} />
